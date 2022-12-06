@@ -1,0 +1,76 @@
+
+
+<ion-content class="background-color">
+    <ion-grid class="middle_conn">
+        <div>
+            <!--<img class="center_img" src="./assets/img/logo.png"> -->
+
+            <ion-card class="center_card">
+                <ion-card-header class="card_header">
+                    <b>{{ appKodu | translate }} </b>
+                    <sup style="font-size: x-small;">v{{appVersion}} </sup> 
+                </ion-card-header>
+                <ion-card-content class="card_content">
+                  <ion-segment (ionChange)="segmentChanged($event)" value="ogrenci" style="padding: 5px">
+                    <ion-segment-button value="ogrenci" class="text">
+                        <ion-label>ÖĞRENCİ</ion-label>
+                    </ion-segment-button>
+                    <ion-segment-button value="egitmen" class="text">
+                        <ion-label>EĞİTMEN</ion-label>
+                    </ion-segment-button>
+                </ion-segment>
+                    <ion-list *ngIf="this.segmentName == 'egitmen'">
+
+                        <ion-item color="input" class="form-input">
+                            <ion-input type="text" [(ngModel)]="username" placeholder="Kullanıcı Adı" clearInput required="true"></ion-input>
+                        </ion-item>
+                        <ion-item color="input" class="form-input">
+                            <ion-input type="password" [(ngModel)]="password" placeholder="Şifre" clearInput required="true"></ion-input>
+                        </ion-item>
+
+                        <ion-button color="button" class="form-button" (click)="goEgitmenHome()">
+                            GİRİŞ
+                        </ion-button>
+                    </ion-list>
+
+                    <ion-list *ngIf="this.segmentName == 'ogrenci'">
+
+                        <ion-item color="input" class="form-input">
+                            <ion-input type="text" [(ngModel)]="identificationNumber" type="text" placeholder="Kimlik No" clearInput required="true"></ion-input>
+                        </ion-item>
+
+                        <ion-item lines="none">
+                          <ion-label button (click)="kullanimSozlesmesi()"> Kullanım Sözleşmesi</ion-label>
+                          <ion-toggle button (click)="kullanimSozlesmesi()" [(ngModel)]="toggleOnayla"></ion-toggle>
+                        </ion-item>
+                        
+                        <ion-button color="button" class="form-button" (click)="goHome()">
+                            GİRİŞ
+                        </ion-button>
+                    </ion-list>
+                </ion-card-content>
+            </ion-card>
+        </div>
+    </ion-grid>
+
+    <ion-fab vertical="top" horizontal="end" slot="fixed">
+      <ion-fab-button (click)="changeLangue()"  size="small" style="--background: #329d9c; margin-top: 20px;">
+        <ion-icon name="globe"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+</ion-content> 
+<ion-footer *ngIf="false"  >
+  <ion-item  (click)="goSettings()" *ngIf="!platform.is('core') && !platform.is('browser') && !platform.is('mobileweb') && !platform.is('ios') || (platform.is('ios') && qrCodeScreen) ">
+    <img style="height: 50px;" [src]="generalSettings.logo"> 
+    <ion-label class="ion-text-wrap">
+     
+      <ion-label color="primary">
+        <h3>&nbsp;{{  generalSettings.kurumAdi | translate }}</h3>
+      </ion-label>
+      <p> &nbsp;{{ 'QRCODE.CLICK_TO_CHANGE_INSTITUTION' | translate }}</p>
+     
+    </ion-label>
+  </ion-item>
+    
+  </ion-footer> 
+  

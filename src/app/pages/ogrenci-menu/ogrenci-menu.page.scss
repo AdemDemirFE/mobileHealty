@@ -1,0 +1,449 @@
+.userCard {
+    background: linear-gradient(to right top, #ffffff, #ecf6ff);;
+   
+  }
+  $colors: (
+    primary: #4c6df9,
+    secondary: #5b5ef4,
+    danger: #f53d3d,
+    light: #75C4FD,
+    dark: #0039a2
+  );
+  
+  .user-profile {
+    .user-avatar {
+      width: 38px;
+      height: 38px;
+      display: inline-block;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgb(4, 57, 75),  0 0 10px rgba(10, 175, 230, 0);
+      img {
+        border-radius: 50%;
+      }
+    }
+    .toolbar-background {
+    //  background-image: linear-gradient(135deg, color($colors, dark), color($colors, primary));
+    }
+  
+    .other-data {
+      .column {
+        &:first-child {
+          border-right: 1px solid rgba(36, 50, 157, .25);
+        }
+      }
+    }
+  }
+  
+  .user-list {
+    .item {
+      &:last-child {
+        border-bottom: 0;
+      }
+      .item-inner {
+        border-color: rgba(86, 61, 124, .1);
+      }
+    }
+  }
+  
+  .text{
+    color: #004E98;;
+    font-family:  'Segoe UI'
+  }
+  
+  .patient-name{
+    color: #004E98;;
+    font-weight: 24px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .home-buttons{
+    //background-color: #f17c8e;
+    //background-color:#1a5478;
+     background: linear-gradient(to right top, #c9cdcf, #aec1cd);
+    color: white;
+    border-radius: 10px;
+    padding: 7px;
+    margin: 7px;
+    height: 35% !important;
+    min-height: 125px;
+    max-width: calc(50% - 4px) !important;
+    position: relative;
+    border:1px solid #a3aab1;
+    box-shadow: 0 0 5px rgb(60, 109, 126),  0 0 5px rgba(66, 105, 118, 0);
+  }
+  
+  .home-buttons-title{
+    font-size: 22px;
+    font-weight: bold;
+    color: rgb(74, 74, 74);
+    margin-top: 10px;
+    margin-left: 10px;
+    letter-spacing: 1px;
+    
+  }
+  
+  .avatar{
+    margin-top: 20px;
+  }
+  
+  .icon {
+    position: absolute;
+    right: 5px; 
+    bottom: 5px; 
+    color:rgb(0, 0, 0);
+    zoom: 1.4;
+  }
+  
+  //--
+  
+  @media screen and (max-width: 480px){
+  
+    .haber {
+      width: 98%;
+      min-height: 345px;
+      max-height: 430px;
+      left: 18px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      //background-color: #265ED7; old color
+      background-color: transparent;
+      box-shadow: 0 8px 5px rgba(255, 255, 255, 0.8);
+    }
+  }
+  
+  @media screen and (min-width: 480px){
+  
+    .haber {
+      width: 98%;
+      min-height: 455px;
+      max-height: 430px;
+      left: 18px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      //background-color: #265ED7; old color
+      background-color: transparent;
+      box-shadow: 0 8px 5px rgba(255, 255, 255, 0.8);
+    }
+  }
+  
+  @media screen and (min-width: 350px){
+  
+    .haber {
+      width: 98%;
+      min-height: 245px;
+      max-height: 330px;
+      left: 18px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      //background-color: #265ED7; old color
+      background-color: transparent;
+      box-shadow: 0 8px 5px rgba(255, 255, 255, 0.8);
+    }
+  }
+  
+  @media screen and (min-width: 730px) and (max-width: 1200px){
+    .haber {
+      width: 98%;
+      height: 400px;
+      left: 18px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      //background-color: #265ED7; old color
+      background-color: transparent;
+      box-shadow: 0 8px 5px rgba(255, 255, 255, 0.8);
+    }
+  }
+  
+  
+  @import url('https://fonts.googleapis.com/css?family=Krub:400,700');
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    width: 100%;
+    height: 100%;
+  }
+  
+  body {
+    background: #237A57;
+    font-family: 'Krub', sans-serif;
+  }
+  
+  
+  @keyframes fadeInMove {
+    0% {
+      opacity: 0;
+      left: -300px;
+    }
+    100% {
+      opacity: 1;
+      left: 150;
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+  
+  @keyframes mvTop {
+    0% {top: -150px;}
+    100% {top: 35px;}
+  }
+  
+  @keyframes dsTop {
+    0% {top: -150px;}
+    100% {top: 0;}
+  }
+  
+  
+  ion-slide>:first-child {
+    width: 100%;
+    right: 18px;
+  }
+  
+  .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    //align-items: flex-start;
+    justify-content: flex-end;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #1e2024);
+    z-index: 1;
+    h2{
+      font-family: Arial, Helvetica, sans-serif; 
+      font-size: 18px; 
+      text-align: left; 
+      color: white; 
+      font-weight: bold;
+      text-shadow: 0 0 15px rgb(4, 43, 55),  0 0 15px rgba(10, 175, 230, 0);
+  
+    }
+    h3{
+      font-family: monospace; 
+      font-size: 14px; 
+      text-align: left; 
+      margin: 4px; 
+      color: rgba(255, 255, 255, 0.859);
+    }
+  }
+  
+  
+  
+  ion-slide>:first-child {//first card is smaller than other cards;therefore, this method added
+    width: 100%;
+    right: 18px;
+  }
+  
+  .swiper-slide-active {
+    transform: scale(1.0, 1.0);
+  
+    ion-card {
+      img {
+        transform: scale(1, 1);
+      }
+    }
+  }
+  
+  .swiper-slide {
+    transition: 400ms all ease-in-out;
+  }
+
+
+  @import url('https://fonts.googleapis.com/css?family=Arima+Madurai:300');
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+h1 {
+	font-family: 'Arima Madurai', cursive;
+	color: black;
+	font-size: 2rem;
+	letter-spacing: -3px;
+	text-shadow: 0px 1px 1px rgba(255,255,255,0.6);
+	position: relative;
+	z-index: 3;
+}
+
+.container {
+	z-index: 1;
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	// min-height: 100vh;
+	min-height: 10rem;
+	background-image: linear-gradient(to bottom,  rgba(255,168,76,0.6) 0%,rgba(255,123,13,0.6) 100%), url('https://images.unsplash.com/photo-1446824505046-e43605ffb17f');
+	background-blend-mode: soft-light;
+	background-size: cover;
+	background-position: center center;
+	padding: 2rem;
+}
+
+.bird {
+	background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/174479/bird-cells-new.svg);
+	background-size: auto 100%;
+	width: 88px;
+	height: 125px;
+	will-change: background-position;
+	
+	animation-name: fly-cycle;
+	animation-timing-function: steps(10);
+	animation-iteration-count: infinite;
+
+	&--one {
+		animation-duration: 1s;
+		animation-delay: -0.5s;		
+	}
+	
+	&--two {
+		animation-duration: 0.9s;
+		animation-delay: -0.75s;
+	}
+	
+	&--three {
+		animation-duration: 1.25s;
+		animation-delay: -0.25s;
+	}
+	
+	&--four {
+		animation-duration: 1.1s;
+		animation-delay: -0.5s;
+	}
+
+}
+
+.bird-container {
+	position: absolute;
+	top: 20%;
+	left: -10%;
+	transform: scale(0) translateX(-10vw);
+	will-change: transform;
+	
+	animation-name: fly-right-one;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	
+	&--one {
+		animation-duration: 15s;
+		animation-delay: 0;
+	}
+	
+	&--two {
+		animation-duration: 16s;
+		animation-delay: 1s;
+	}
+	
+	&--three {
+		animation-duration: 14.6s;
+		animation-delay: 9.5s;
+	}
+	
+	&--four {
+		animation-duration: 16s;
+		animation-delay: 10.25s;
+	}
+	
+}
+
+@keyframes fly-cycle {
+	
+	100% {
+		background-position: -900px 0;
+	}
+	
+}
+
+@keyframes fly-right-one {
+	
+	0% {
+		transform: scale(0.3) translateX(-10vw);
+	}
+	
+	10% {
+		transform: translateY(2vh) translateX(10vw) scale(0.4);
+	}
+	
+	20% {
+		transform: translateY(0vh) translateX(30vw) scale(0.5);
+	}
+	
+	30% {
+		transform: translateY(4vh) translateX(50vw) scale(0.6);
+	}
+	
+	40% {
+		transform: translateY(2vh) translateX(70vw) scale(0.6);
+	}
+	
+	50% {
+		transform: translateY(0vh) translateX(90vw) scale(0.6);
+	}
+	
+	60% {
+		transform: translateY(0vh) translateX(110vw) scale(0.6);
+	}
+	
+	100% {
+		transform: translateY(0vh) translateX(110vw) scale(0.6);
+	}
+	
+}
+
+@keyframes fly-right-two {
+	
+	0% {
+		transform: translateY(-2vh) translateX(-10vw) scale(0.5);
+	}
+	
+	10% {
+		transform: translateY(0vh) translateX(10vw) scale(0.4);
+	}
+	
+	20% {
+		transform: translateY(-4vh) translateX(30vw) scale(0.6);
+	}
+	
+	30% {
+		transform: translateY(1vh) translateX(50vw) scale(0.45);
+	}
+	
+	40% {
+		transform: translateY(-2.5vh) translateX(70vw) scale(0.5);
+	}
+	
+	50% {
+		transform: translateY(0vh) translateX(90vw) scale(0.45);
+	}
+	
+	51% {
+		transform: translateY(0vh) translateX(110vw) scale(0.45);
+	}
+	
+	100% {
+		transform: translateY(0vh) translateX(110vw) scale(0.45);
+	}
+	
+}

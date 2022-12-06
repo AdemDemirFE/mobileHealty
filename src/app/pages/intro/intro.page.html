@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="{{'BACK' | translate}}" class="back-button"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen padding scroll-y="false" class="background">
+  <!-- <img style="display: flex; position: absolute; left: 0;right: 0;bottom: 0;top: 0; background-color:#4FD379 ;" src="./assets/img/intro-bg.png"/>-->
+  <ion-slides class="slider-content" pager="true" [options]="slideOptsOne">
+    <ion-slide>
+      <img src="./assets/img/intro1.png" />
+      <p class="intro-text">{{ 'INTRO.INTRO_EXPLANATION1' | translate }}</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="./assets/img/intro2.png" />
+      <p class="intro-text">{{ 'INTRO.INTRO_EXPLANATION2' | translate }}</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="./assets/img/intro3.png" />
+      <p class="intro-text">{{ 'INTRO.INTRO_EXPLANATION3' | translate }}</p>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-row class="ion-align-items-center ion-justify-content-center">
+    <button class="skip" (click)="goLogin()">
+      {{ 'INTRO.CONTINUE' | translate }}
+    </button>
+  </ion-row>
+  <!-- <a class="continue"
+      routerLink='/select-lang'>
+      {{ 'INTRO.CONTINUE' | translate }}
+    </a> -->
+
+</ion-content>

@@ -1,0 +1,47 @@
+
+
+
+
+
+@media only screen and (min-width: 1490px) {}
+
+@media only screen and (max-width: 1490px) and (min-width: 1366px) {}
+
+@media only screen and (max-width: 1366px) and (min-width: 1023px) {}
+
+
+@media only screen and (max-width: 1023px) and (min-width: 992px) {
+
+}
+
+@media only screen and (max-width: 992px) and (min-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) and (min-width: 540px) {
+
+}
+
+@media only screen and (max-width: 540px) {
+
+
+}
+
+
+.iconButton {
+    width: 100%;
+    min-height: 56px;
+    border-left: 1px solid #e8e8e7;
+    --box-shadow: none;
+    margin: 0;
+}
+
+.toolbar {
+    border: 1px solid #e8e8e7;
+}
+
+.title {
+    font-size: medium;
+    text-align: center;
+    height: 100%;
+}

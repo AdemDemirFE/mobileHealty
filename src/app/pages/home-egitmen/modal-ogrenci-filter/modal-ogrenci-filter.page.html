@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar  class="toolbar" >
+
+    <ion-title class="title">{{ 'HASTALISTESI.HASTA_FILTER_TITLE' | translate }}</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="customContent">
+
+  <ion-item  color="selectInput" >
+    <ion-label>{{ 'HASTALISTESI.BIRIM' | translate }} :</ion-label>
+    <ion-select  [(ngModel)]="filterData.birim"     cancelText="{{ 'GENEL.VAZGEC' | translate }}" okText="{{ 'GENEL.SEC' | translate }}">
+      <ion-select-option  *ngFor="let item of birimler"   [value]="item">{{item.merkezAdi}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item color="selectInput" >
+    <ion-label>{{ 'HASTALISTESI.PERSONEL' | translate }} :</ion-label>
+    <ion-select  [(ngModel)]="filterData.personelId" disabled="true" cancelText="{{ 'GENEL.VAZGEC' | translate }}" okText="{{ 'GENEL.SEC' | translate }}">
+      <ion-select-option   value="">{{ 'HASTALISTESI.PERS_SECIM' | translate }}</ion-select-option>
+      <ion-select-option  *ngFor="let item of personeller" value="{{item.personelId}}">{{item.adSoyad}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item  color="selectInput">
+    <ion-label>{{ 'HASTALISTESI.MUA_DURUM' | translate }} :</ion-label>
+    <ion-select disabled="true" [(ngModel)]="filterData.muyaneDurum"  cancelText="{{ 'GENEL.VAZGEC' | translate }}" okText="{{ 'GENEL.SEC' | translate }}">
+      <ion-select-option value="">{{ 'HASTALISTESI.TUMU' | translate }}</ion-select-option>
+      <ion-select-option value="10">{{ 'HASTALISTESI.C_YAPILAN' | translate }}</ion-select-option>
+      <ion-select-option value="11">{{ 'HASTALISTESI.C_YAPILMAYAN' | translate }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+<!-- 
+  <ion-item color="datetimeInput">
+    <ion-label  style="text-align: left;">{{ 'HASTALISTESI.BAS_TARIH' | translate }} :</ion-label>
+    <ion-datetime disabled="true" [(ngModel)]="startDate"  cancelText="{{ 'GENEL.VAZGEC' | translate }}" doneText="{{ 'GENEL.SEC' | translate }}" displayFormat="DD/MM/YYYY" >
+    </ion-datetime>
+  </ion-item>
+
+  <ion-item color="datetimeInput">
+    <ion-label   style="text-align: left;">{{ 'HASTALISTESI.BIT_TARIH' | translate }} :</ion-label>
+    <ion-datetime disabled="true"  [(ngModel)]="endDate"  cancelText="{{ 'GENEL.VAZGEC' | translate }}" doneText="{{ 'GENEL.SEC' | translate }}" displayFormat="DD/MM/YYYY" >
+    </ion-datetime>
+  </ion-item>
+ -->
+
+
+
+</ion-content>
+
+<ion-footer >
+  <ion-toolbar  class="toolbar2" >
+
+    <ion-button  expand="block" class="iconButton"    slot="start" color="buttonicon" (click)="Close()">
+      <ion-icon  [ios]="'exit'+'-outline'" [md]="'exit'+'-sharp'" ></ion-icon>  &nbsp; {{ 'GENEL.KAPAT' | translate }}
+    </ion-button>
+
+      <ion-button  expand="block" class="iconButton"    slot="end" color="buttonicon" (click)="filter()">
+        <ion-icon  [ios]="'checkmark-circle'+'-outline'" [md]="'checkmark-circle'+'-sharp'" ></ion-icon> &nbsp; {{ 'GENEL.UYGULA' | translate }}
+      </ion-button>
+
+  </ion-toolbar>
+</ion-footer>
+

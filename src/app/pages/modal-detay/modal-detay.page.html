@@ -1,0 +1,26 @@
+<ion-header >
+  <ion-toolbar  class="toolbar" >
+
+    <ion-title class="title">{{ 'GENEL.DETAYLAR' | translate }}</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-list>
+    <ion-item *ngFor="let item of detayFields">
+      <ion-col style="font-weight: bold; font-size:small;" size="6"> {{item.translate|translate }}&nbsp;:</ion-col>
+      <ion-col style="text-align: left;  font-size:small;"  [innerHTML]="item.value"></ion-col>
+    </ion-item>
+  </ion-list>
+
+
+</ion-content>
+
+<ion-footer >
+  <ion-toolbar  class="toolbar2" >
+    <ion-button  expand="block" class="iconButton"    slot="end" color="buttonicon" (click)="Close()">
+      <ion-icon  [ios]="'exit'+'-outline'" [md]="'exit'+'-sharp'" ></ion-icon>  &nbsp; {{ 'GENEL.KAPAT' | translate }}
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

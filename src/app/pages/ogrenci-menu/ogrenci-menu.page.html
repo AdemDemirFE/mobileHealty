@@ -1,0 +1,123 @@
+<ion-header>
+  <ion-grid>
+    <ion-row class="userCard" (click)="openActionSheet()">
+      <ion-col>
+          <div class="user-avatar">
+            <img style="height: 80px; width: 80px; margin: 10px; border-radius:50%;" 
+            [src]="'./assets/img/profil_avatar.png'">
+          </div>
+      </ion-col>
+      <ion-col style="margin-left: -70px; margin-top: 15px;">
+        <h2 ion-text class="no-margin bold color:white" style="color: rgb(27, 27, 27);">
+          adem demir
+        </h2>
+        <span style="color: rgb(27, 27, 27);">12345678910</span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-header>
+<ion-content>
+
+  <div class="container">
+	
+    <h1>Mobile Health</h1>
+  
+    <div class="bird-container bird-container--one">
+      <div class="bird bird--one"></div>
+    </div>
+    
+    <div class="bird-container bird-container--two">
+      <div class="bird bird--two"></div>
+    </div>
+    
+    <div class="bird-container bird-container--three">
+      <div class="bird bird--three"></div>
+    </div>
+    
+    <div class="bird-container bird-container--four">
+      <div class="bird bird--four"></div>
+    </div>
+
+  </div>
+    
+  <ion-grid style="margin-bottom: 10px;">
+    <ion-row>
+      <ion-col class="home-buttons">
+        <ion-label text-wrap class="home-buttons-title">
+          1
+        </ion-label>
+        <ion-icon class="icon" size="large" name="information-outline"></ion-icon>
+      </ion-col>
+  
+      <ion-col class="home-buttons" >
+        <ion-label text-wrap class="home-buttons-title">
+          2
+        </ion-label>
+        <ion-icon class="icon" size="large" name="person-outline"></ion-icon>
+      </ion-col>
+    </ion-row>
+  
+    <ion-row>
+      <ion-col  class="home-buttons" >
+        <ion-label text-wrap class="home-buttons-title">
+          3
+        </ion-label>
+        <ion-icon class="icon" size="large" name="help-outline"></ion-icon>
+      </ion-col>
+  
+      <ion-col  class="home-buttons" >
+        <ion-label text-wrap class="home-buttons-title">
+          4
+        </ion-label>
+        <ion-icon class="icon" size="large" name="time-outline"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid style="margin-bottom: 5px; margin-top: 5px;">        
+    <ion-slides [options]="slideOptsOne"  #slideWithNav>
+      <ion-slide style="align-items: center;">
+        <div style="align-items: center;"> 
+          <ion-card class="haber" button (click)="usefulInformationDetail(data)">
+            <div> 
+              <ion-img style="width:100% !important; height: 50% !important; " src="./assets/img/turk.png"></ion-img>
+            </div>
+            <ion-card class="overlay">
+              <div style="text-align: left;">
+                <h2>
+                  başlık
+                </h2>
+                <ion-badge style="background-color: #335ec9c3;">
+                  <h3>
+                    04.12.2022
+                  </h3>
+                </ion-badge>
+              </div>
+            </ion-card>            
+          </ion-card>
+        </div> 
+      </ion-slide>
+      <ion-slide style="align-items: center;">
+        <div style="align-items: center;"> 
+          <ion-card class="haber" button (click)="usefulInformationDetail(data)">
+            <div> 
+              <ion-img style="width:100% !important; height: 50% !important; " src="./assets/img/turk.png"></ion-img>
+            </div>
+            <ion-card class="overlay">
+              <div style="text-align: left;">
+                <h2>
+                  başlık
+                </h2>
+                <ion-badge style="background-color: #335ec9c3;">
+                  <h3>
+                    04.12.2022
+                  </h3>
+                </ion-badge>
+              </div>
+            </ion-card>            
+          </ion-card>
+        </div> 
+      </ion-slide>
+    </ion-slides>
+  </ion-grid>
+</ion-content>

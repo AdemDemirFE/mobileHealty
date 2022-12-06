@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-grid>
+    <ion-row class="userCard" (click)="openActionSheet()">
+      <ion-col>
+          <div class="user-avatar">
+            <img style="height: 80px; width: 80px; margin: 10px; border-radius:50%;" 
+            [src]="'./assets/img/profil_avatar.png'">
+          </div>
+      </ion-col>
+      <ion-col style="margin-left: -70px; margin-top: 15px;">
+        <h2 ion-text class="no-margin bold color:white" style="color: rgb(27, 27, 27);">
+          Adem Demir
+        </h2>
+        <span style="color: rgb(27, 27, 27);">12345678910</span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-header>
+
+
+<ion-content class="app-background-color">
+  <br>
+   <div class="timer-group" *ngIf="randevuVar == true && randevuAktif == false">
+     <div class="timer hour">
+       <div class="hand"><ion-label [ngStyle]="{'animation-duration' : countData + 's' }"></ion-label></div>
+       <div class="hand"><ion-label [ngStyle]="{'animation-duration' : countData + 's' }"></ion-label></div>
+     </div>
+     <div class="timer minute">
+     </div> 
+     <div class="timer second">
+       <div class="hand"><ion-label></ion-label></div>
+       <div class="hand"><ion-label></ion-label></div>
+     </div>
+     <div class="face">
+       <p style="margin-top: -20px; font-size: 24px;">{{daysString}} {{ 'HOME_DGT.GUN' | translate }}</p>
+       <p style="margin-top: 10px; font-size: 24px;">{{hoursString}}:{{minutesString}}:{{secondsString}}</p>  
+     </div>
+   </div>
+ 
+   <div class="timer-group" *ngIf="randevuVar == false && randevuAktif == false">
+     <div class="timer hour">
+       <div class="hand" style="background: rgba(255, 16, 16, 0.637);"><ion-label></ion-label></div>
+       <div class="hand" style="background: rgba(255, 16, 16, 0.637);"><ion-label></ion-label></div>
+     </div>
+     <div class="timer minute">
+     </div> 
+     <div class="timer second">
+       <div class="hand" style="background: rgba(255, 16, 16, 0.637);"><ion-label></ion-label></div>
+       <div class="hand" style="background: rgba(255, 16, 16, 0.637);"><ion-label></ion-label></div>
+     </div>
+     <div class="face text-wrap" style="width: 160px;">
+       <p style="margin-left: 54px; margin-top: -15px; font-size: 16px; width: 150px;">{{ 'HOME_DGT.RANDEVU_YOK' | translate }}</p>  
+     </div>
+   </div>
+ 
+   <div>
+     <div class="timer-group" *ngIf="randevuAktif == true ">
+       <div class="timer hour" >
+         <div class="hand"><ion-label [ngStyle]="{'animation-duration' : countData + 's' }"></ion-label></div>
+         <div class="hand"><ion-label [ngStyle]="{'animation-duration' : countData + 's' }"></ion-label></div>
+       </div>
+       <div class="timer minute" style="background: rgb(65, 184, 131);">
+       </div> 
+       <div class="timer second" >
+         <div class="hand"><ion-label></ion-label></div>
+         <div class="hand"><ion-label></ion-label></div>
+       </div>
+       <div class="face text-wrap" style="width: 160px;" (click)="timeClick(item)">
+         <p style="margin-left: 50px; margin-top: -10px; font-size: 18px; width: 160px;">{{ 'HOME_DGT.RANDEVU_AKTIF' | translate }}</p>  
+         <p style="margin-top: 10px; font-size: 24px;">{{minutesString}}:{{secondsString}}</p>  
+       </div>
+     </div>
+   </div>
+ 
+
+   <ion-segment (ionChange)="segmentChanged($event)" value="gelecekRandevularSegment" style="margin-top: 20px;">
+    <ion-segment-button value="gecmisRandevularSegment">
+      <ion-label class="ion-text-wrap">{{ 'HOME_DGT.GECMIS_RANDEVULAR' | translate }}
+        <ion-badge color="danger">{{gecmisRandevuBadge}}</ion-badge>
+      </ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="gelecekRandevularSegment">
+      <ion-label class="ion-text-wrap">{{ 'HOME_DGT.GELECEK_RANDEVULAR' | translate }}
+        <ion-badge color="success">{{gelecekRandevuBadge}}</ion-badge>
+      </ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  
+
+  <ion-grid *ngIf="this.segmentName == 'gecmisRandevularSegment'">
+   
+    GECMİS RANDEVU LİST 
+
+  </ion-grid>
+
+  <ion-grid *ngIf="this.segmentName == 'gelecekRandevularSegment'">
+   
+    GELECEK RANDEVU LİST 
+    
+  </ion-grid>
+
+   
+ </ion-content>

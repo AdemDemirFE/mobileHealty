@@ -1,0 +1,7 @@
+{
+  "name": "mobileHealty",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

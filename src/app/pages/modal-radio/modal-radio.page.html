@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar class="toolbar">
+
+    <ion-title *ngIf="selectVal!=null" style="font-size:medium;padding-inline:10px;text-align:left;">
+      <label style="color: white;">{{ findSelect(selectVal).length>0 ? findSelect(selectVal)[0][textField]: ''}}</label>
+    </ion-title>
+    <ion-title *ngIf="selectVal==null" style="font-size:medium;padding-inline:10px;text-align:left;">
+      <label style="color: white;">{{ 'GENEL.LUTFEN_SECIM_YAPINIZ' |translate }}</label>
+    </ion-title>
+
+
+  </ion-toolbar>
+  <ion-searchbar color="searchinput" placeholder="{{ 'USEFUL_INFORMATION.SEARCHBAR_PLACEHOLDER' | translate}}" (ionInput)="filterItems($event)">
+  </ion-searchbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-radio-group [(ngModel)]="selectVal">
+    <ion-item color="radioItem" *ngFor="let item of itemsTmp;let i=index;">
+      <ion-label>{{item[textField]}}</ion-label>
+      <ion-radio [value]="item[valField]"
+        checked="findSelect(selectVal).length>0 ? findSelect(selectVal)[0][valField]: false"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar class="toolbar2">
+
+    <ion-button expand="block" class="iconButton" slot="start" color="buttonicon" (click)="Close()">
+      <ion-icon slot="icon-only" [ios]="'exit'+'-outline'" [md]="'exit'+'-sharp'"></ion-icon> &nbsp;
+      {{ 'GENEL.KAPAT' | translate }}
+    </ion-button>
+
+    <ion-button expand="block" class="iconButton" [disabled]="selectVal==null" slot="end" color="buttonicon"
+      (click)="Save()">
+      <ion-icon slot="icon-only" [ios]="'checkmark-circle'+'-outline'" [md]="'checkmark-circle'+'-sharp'"></ion-icon>
+      &nbsp; {{ 'GENEL.SEC' | translate }}
+    </ion-button>
+
+  </ion-toolbar>
+</ion-footer>
